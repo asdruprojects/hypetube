@@ -1,0 +1,30 @@
+{
+  "data": [
+    {
+      "id": "vid_node_tutorial",
+      "title": "Node.js Tutorial completo",
+      "author": "Coder A",
+      "thumbnail": "https://placehold.co/640x360/0b0b0d/a1a1aa?text=Node",
+      "relativePublishedDate": "Hace 1 mes",
+      "publishedAt": "2026-04-15T12:00:00.000Z",
+      "views": 500,
+      "likes": 200,
+      "comments": 50,
+      "hypeScore": 1.0,
+      "isTutorial": true
+    },
+    {
+      "id": "vid_old_tutorial",
+      "title": "Vue 2 Tutorial",
+      "author": "Coder B",
+      "thumbnail": "https://placehold.co/640x360/0b0b0d/a1a1aa?text=Vue",
+      "relativePublishedDate": "Hace 2 meses",
+      "publishedAt": "2026-03-01T12:00:00.000Z",
+      "views": 1000,
+      "likes": 100,
+      "comments": 100,
+      "hypeScore": 0.4,
+      "isTutorial": true
+    }
+  ]
+}

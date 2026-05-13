@@ -1,0 +1,55 @@
+{
+  "kind": "youtube#videoListResponse",
+  "items": [
+    {
+      "id": "vid_react",
+      "snippet": {
+        "title": "React patterns avanzados",
+        "channelTitle": "Coder A",
+        "publishedAt": "2026-04-01T12:00:00.000Z",
+        "thumbnails": { "high": { "url": "https://img/test/react.jpg" } }
+      },
+      "statistics": { "viewCount": "1000", "likeCount": "200", "commentCount": "50" }
+    },
+    {
+      "id": "vid_node_tutorial",
+      "snippet": {
+        "title": "Node.js Tutorial completo",
+        "channelTitle": "Coder A",
+        "publishedAt": "2026-04-15T12:00:00.000Z",
+        "thumbnails": { "high": { "url": "https://img/test/node.jpg" } }
+      },
+      "statistics": { "viewCount": "500", "likeCount": "200", "commentCount": "50" }
+    },
+    {
+      "id": "vid_ts",
+      "snippet": {
+        "title": "TypeScript en 2026",
+        "channelTitle": "Coder B",
+        "publishedAt": "2026-05-01T12:00:00.000Z",
+        "thumbnails": { "high": { "url": "https://img/test/ts.jpg" } }
+      },
+      "statistics": { "viewCount": "2000", "likeCount": "100", "commentCount": "100" }
+    },
+    {
+      "id": "vid_disabled",
+      "snippet": {
+        "title": "Stream sin chat",
+        "channelTitle": "Coder C",
+        "publishedAt": "2026-05-05T12:00:00.000Z",
+        "thumbnails": { "high": { "url": "https://img/test/stream.jpg" } }
+      },
+      "statistics": { "viewCount": "100", "likeCount": "10" }
+    },
+    {
+      "id": "vid_old_tutorial",
+      "snippet": {
+        "title": "Vue 2 Tutorial",
+        "channelTitle": "Coder B",
+        "publishedAt": "2026-03-01T12:00:00.000Z",
+        "thumbnails": { "high": { "url": "https://img/test/vue.jpg" } }
+      },
+      "statistics": { "viewCount": "1000", "likeCount": "100", "commentCount": "100" }
+    }
+  ]
+}

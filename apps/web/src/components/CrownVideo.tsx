@@ -18,13 +18,18 @@ export function CrownVideo({ video }: CrownVideoProps) {
 
   return (
     <article className="relative animate-fade-in-up">
-      {/* Halo dorado externo — más intenso para “joya” */}
+      {/* Halo dorado externo — amplio pero contenido */}
       <div
         aria-hidden
-        className="pointer-events-none absolute -inset-8 -z-10 rounded-[2.75rem] bg-[radial-gradient(75%_70%_at_50%_45%,rgba(251,191,36,0.35),rgba(245,197,66,0.12)_45%,transparent_72%)]"
+        className="pointer-events-none absolute -inset-12 -z-10 rounded-[3rem] bg-[radial-gradient(70%_65%_at_50%_45%,rgba(251,191,36,0.4),rgba(245,197,66,0.13)_45%,transparent_75%)] blur-[2px]"
+      />
+      {/* Brillo interior secundario (más sutil) */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute -inset-2 -z-10 rounded-[2rem] bg-[radial-gradient(60%_55%_at_50%_50%,rgba(255,224,140,0.22),transparent_70%)]"
       />
 
-      <div className="relative overflow-hidden rounded-3xl border-2 border-amber-400/90 bg-gradient-to-br from-amber-50 via-white to-stone-100 shadow-[0_0_0_1px_rgba(251,191,36,0.25),0_0_48px_-8px_rgba(245,197,66,0.45),0_32px_64px_-24px_rgba(120,80,20,0.35)] ring-2 ring-inset ring-amber-200/80">
+      <div className="relative overflow-hidden rounded-3xl border border-amber-300/55 bg-gradient-to-br from-amber-50 via-white to-stone-100 shadow-[0_0_0_1px_rgba(251,191,36,0.1),0_0_52px_-10px_rgba(245,197,66,0.4),0_32px_64px_-24px_rgba(120,80,20,0.32)]">
         <div className="grid grid-cols-1 md:grid-cols-[1.05fr_1fr]">
           {/* Imagen */}
           <div className="relative aspect-video overflow-hidden bg-stone-200 md:aspect-auto md:min-h-[360px]">
@@ -40,7 +45,7 @@ export function CrownVideo({ video }: CrownVideoProps) {
               className="absolute inset-0 bg-gradient-to-tr from-amber-900/10 via-transparent to-white/20 mix-blend-soft-light"
             />
             <div className="absolute left-4 top-4">
-              <span className="inline-flex items-center gap-1.5 rounded-full border-2 border-amber-400/90 bg-zinc-950/90 px-3 py-1.5 text-[11px] font-bold uppercase tracking-[0.16em] text-amber-200 shadow-[0_0_20px_-2px_rgba(251,191,36,0.55)] ring-2 ring-amber-300/50 ring-offset-2 ring-offset-zinc-950 backdrop-blur-sm">
+              <span className="inline-flex items-center gap-1.5 rounded-full border border-amber-300/60 bg-zinc-950/90 px-3 py-1.5 text-[11px] font-bold uppercase tracking-[0.16em] text-amber-200 shadow-[0_0_28px_-2px_rgba(251,191,36,0.7)] backdrop-blur-sm">
                 <Crown className="h-3.5 w-3.5 text-amber-300" />
                 Joya de la Corona
               </span>

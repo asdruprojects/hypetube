@@ -1,0 +1,69 @@
+{
+  "data": [
+    {
+      "id": "vid_node_tutorial",
+      "title": "Node.js Tutorial completo",
+      "author": "Coder A",
+      "thumbnail": "https://placehold.co/640x360/0b0b0d/a1a1aa?text=Node",
+      "relativePublishedDate": "Hace 1 mes",
+      "publishedAt": "2026-04-15T12:00:00.000Z",
+      "views": 500,
+      "likes": 200,
+      "comments": 50,
+      "hypeScore": 1.0,
+      "isTutorial": true
+    },
+    {
+      "id": "vid_old_tutorial",
+      "title": "Vue 2 Tutorial",
+      "author": "Coder B",
+      "thumbnail": "https://placehold.co/640x360/0b0b0d/a1a1aa?text=Vue",
+      "relativePublishedDate": "Hace 2 meses",
+      "publishedAt": "2026-03-01T12:00:00.000Z",
+      "views": 1000,
+      "likes": 100,
+      "comments": 100,
+      "hypeScore": 0.4,
+      "isTutorial": true
+    },
+    {
+      "id": "vid_react",
+      "title": "React patterns avanzados",
+      "author": "Coder A",
+      "thumbnail": "https://placehold.co/640x360/0b0b0d/a1a1aa?text=React",
+      "relativePublishedDate": "Hace 1 mes",
+      "publishedAt": "2026-04-01T12:00:00.000Z",
+      "views": 1000,
+      "likes": 200,
+      "comments": 50,
+      "hypeScore": 0.25,
+      "isTutorial": false
+    },
+    {
+      "id": "vid_ts",
+      "title": "TypeScript en 2026",
+      "author": "Coder B",
+      "thumbnail": "https://placehold.co/640x360/0b0b0d/a1a1aa?text=TS",
+      "relativePublishedDate": "Hace 11 días",
+      "publishedAt": "2026-05-01T12:00:00.000Z",
+      "views": 2000,
+      "likes": 100,
+      "comments": 100,
+      "hypeScore": 0.1,
+      "isTutorial": false
+    },
+    {
+      "id": "vid_disabled",
+      "title": "Stream sin chat",
+      "author": "Coder C",
+      "thumbnail": "https://placehold.co/640x360/0b0b0d/a1a1aa?text=Stream",
+      "relativePublishedDate": "Hace 7 días",
+      "publishedAt": "2026-05-05T12:00:00.000Z",
+      "views": 100,
+      "likes": 10,
+      "comments": null,
+      "hypeScore": 0,
+      "isTutorial": false
+    }
+  ]
+}
