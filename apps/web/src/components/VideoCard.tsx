@@ -15,7 +15,7 @@ export function VideoCard({ video }: VideoCardProps) {
         <Thumbnail
           src={video.thumbnail}
           alt={video.title}
-          className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+          className="h-full w-full object-cover"
         />
         <div className="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-zinc-950/80 to-transparent" />
         <div className="absolute left-2 top-2 flex flex-wrap gap-1.5">

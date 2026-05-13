@@ -56,6 +56,9 @@ export function Thumbnail({
       src={src ?? undefined}
       alt={alt}
       loading={loading}
+      decoding="async"
+      width={400}
+      height={225}
       onError={() => setFailed(true)}
       className={cn('h-full w-full object-cover', className)}
     />

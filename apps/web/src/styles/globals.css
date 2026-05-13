@@ -21,9 +21,8 @@
   }
 
   /* Gradiente decorativo fijo. Va detrás del contenido pero ENCIMA del color base de html.
-   * Cubrimos las 4 zonas (top-left, top-right, bottom-left, bottom-right) para que NUNCA
-   * quede una franja del viewport sin un toque de color: si no, las secciones inferiores
-   * "se ven negras" porque el fondo plano #09090b coincide con el de varias cards. */
+   * Mantenido simple (2 radiales) para no sobrecargar la GPU en mobile y evitar
+   * que Chrome Android invalide la capa y muestre flashes negros. */
   body::before {
     content: '';
     position: fixed;
@@ -31,11 +30,9 @@
     z-index: -1;
     pointer-events: none;
     background:
-      radial-gradient(900px 560px at 12% -10%, rgba(99, 102, 241, 0.18), transparent 62%),
-      radial-gradient(820px 520px at 105% 8%, rgba(244, 114, 182, 0.14), transparent 65%),
-      radial-gradient(900px 640px at 95% 105%, rgba(99, 102, 241, 0.12), transparent 65%),
-      radial-gradient(800px 580px at 5% 100%, rgba(251, 191, 36, 0.07), transparent 65%),
-      linear-gradient(180deg, #0b0b0f 0%, #0a0a0c 50%, #0c0b10 100%);
+      radial-gradient(900px 560px at 12% -10%, rgba(99, 102, 241, 0.16), transparent 62%),
+      radial-gradient(820px 520px at 100% 100%, rgba(244, 114, 182, 0.10), transparent 65%),
+      #0b0b0f;
   }
 
   * {
