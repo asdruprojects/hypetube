@@ -49,13 +49,11 @@ En el backend cada feature es un módulo Nest (`videos`, `stats`, `health`) con 
 
 ## Problemas encontrados
 
-1. **Thumbnails del mock no cargaban**. Las URLs venían con formato tipo `https://placehold.co/300x200/282c34/61dafb?text=Redux`. Los segmentos de color (`/282c34/61dafb`) hacían que el servicio devolviera 404 y las imágenes salieran rotas. Las dejé en la versión simple `https://placehold.co/300x200?text=Redux` y se vieron al toque. Aprovechando, dejé un `Thumbnail` en `packages/ui` con fallback por si alguna URL futura vuelve a fallar.
-2. **`@nestjs/swagger` instaló v11 por default**, que pide `@nestjs/common@^11`. Como el proyecto está en Nest 10, peleaba con peer deps. Bajé a `@nestjs/swagger@^8`, que es la línea compatible con Nest 10.
-3. **Timeout por defecto de Jest insuficiente para los tests de endpoint**. El primer arranque de Nest + ts-jest se va a 10-15s en frío y los specs morían en el `beforeAll` con el timeout de 5s. Lo subí a 30s en `test/setup.ts`.
+1. **Thumbnails del mock no cargaban**. Las URLs venían con formato tipo `https://placehold.co/300x200/282c34/61dafb?text=Redux`. Los segmentos de color (`/282c34/61dafb`) hacían que el servicio devolviera 404 y las imágenes salieran rotas. Las dejé en la versión simple `https://placehold.co/300x200?text=Redux` y se vieron bien. Aprovechando, dejé un `Thumbnail` en `packages/ui` con fallback por si alguna URL futura vuelve a fallar.
+2. **`@nestjs/swagger` instaló v11 por default**, que pide `@nestjs/common@^11`. Como el proyecto está en Nest 10, peleaba con peer deps. Bajé a 
 4. **ESM en Node 22 con `contracts`**. Tenía `module: ESNext` y Node fallaba al cargar `import './videos'` por falta de extensión `.js`. Dejé ese paquete en CommonJS.
 5. **Tailwind no veía las clases de `@hypetube/ui`**. Por defecto solo escanea su propio `content`. Agregué `'../../packages/ui/src/**/*.{ts,tsx}'` al `tailwind.config.ts` del web.
-6. **Windows resolviendo `localhost` a `::1`**. NestJS escuchaba en IPv4 y el front fallaba con `ERR_CONNECTION_REFUSED`. El `apiClient` ahora normaliza `localhost → 127.0.0.1` en runtime.
-7. **Cypress hereda el `exclude` del tsconfig padre**. Cuando excluí `cypress/` del `tsconfig.app.json`, el `tsconfig` interno de Cypress también lo heredó y compilaba vacío. Lo hice autónomo.
+
 
 ## Uso de IA
 
