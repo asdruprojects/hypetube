@@ -6,6 +6,8 @@
     "dev": "turbo run dev",
     "build": "turbo run build",
     "build:api": "turbo run build --filter=@hypetube/api",
+    "build:web": "turbo run build --filter=@hypetube/web",
+    "start:web": "pnpm --filter @hypetube/web run preview:railway",
     "lint": "turbo run lint",
     "test": "turbo run test",
     "check-types": "turbo run check-types",
