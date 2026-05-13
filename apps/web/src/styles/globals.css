@@ -3,25 +3,24 @@
 @tailwind utilities;
 
 @layer base {
+  /* El color base vive en <html>: cubre overscroll de iOS, primer paint antes de React
+   * y cualquier hueco que deje la barra dinámica de Chrome Android.
+   * El body NO debe tener background-color o tapa el gradiente del ::before. */
   html {
     color-scheme: dark;
     background-color: #09090b;
   }
 
-  /* El fondo de la app vive aquí:
-   * - color base sólido en <html> para que iOS Safari nunca vea blanco al overscroll
-   * - gradientes en un pseudo-elemento fijo (background-attachment: fixed se rompe en mobile)
-   * - overflow-x: hidden contiene halos con -inset que generaban scroll horizontal y "rebote" negro al bajar.
-   */
   body {
     position: relative;
-    min-height: 100vh;
+    /* 100dvh = viewport dinámico (considera barra de URL del navegador móvil que se contrae/expande). */
+    min-height: 100dvh;
     /* clip (no hidden) corta el desborde horizontal del halo del CrownVideo
-     * sin convertir a body en scroll container -> preserva el sticky del Header. */
+     * sin convertir al body en scroll container -> preserva el sticky del Header. */
     overflow-x: clip;
-    background-color: #09090b;
   }
 
+  /* Gradiente decorativo fijo. Va detrás del contenido pero ENCIMA del color base de html. */
   body::before {
     content: '';
     position: fixed;

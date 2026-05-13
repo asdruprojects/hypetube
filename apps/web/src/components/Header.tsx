@@ -2,7 +2,7 @@ import { Zap } from 'lucide-react';
 
 export function Header() {
   return (
-    <header className="sticky top-0 z-30 border-b border-white/5 bg-zinc-950/70 backdrop-blur-md">
+    <header className="sticky top-0 z-30 border-b border-white/10 bg-zinc-950/85 shadow-[0_8px_24px_-12px_rgba(0,0,0,0.6)] supports-[backdrop-filter]:bg-zinc-900/55 supports-[backdrop-filter]:backdrop-blur-md">
       <div className="container flex items-center justify-between py-4">
         <a href="/" className="group flex items-center gap-3" aria-label="HypeTube — inicio">
           <span className="relative inline-flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-amber-300 via-amber-400 to-rose-400 text-zinc-950 shadow-[0_10px_30px_-12px_rgba(245,197,66,0.55)] ring-1 ring-amber-200/40 transition-transform group-hover:scale-[1.04]">
