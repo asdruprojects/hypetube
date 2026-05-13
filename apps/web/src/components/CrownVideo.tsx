@@ -17,7 +17,7 @@ export function CrownVideo({ video }: CrownVideoProps) {
   const commentsDisabled = video.comments === null;
 
   return (
-    <article className="relative isolate">
+    <article className="relative">
       {/* Sin filter:blur ni scale animado: en Chrome Android eso + scroll = GPU OOM / pantalla negra. */}
       <div
         aria-hidden

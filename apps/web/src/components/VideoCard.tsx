@@ -12,7 +12,7 @@ interface VideoCardProps {
 export function VideoCard({ video, fetchPriority = 'low' }: VideoCardProps) {
   const commentsDisabled = video.comments === null;
   return (
-    <Card className="group flex h-full flex-col overflow-hidden border-white/[0.06] transition-colors hover:border-white/15 [content-visibility:auto] [contain-intrinsic-size:auto_280px]">
+    <Card className="group flex h-full flex-col overflow-hidden border-white/[0.06] transition-colors hover:border-white/15">
       <div className="relative aspect-video overflow-hidden bg-zinc-900">
         <Thumbnail
           src={video.thumbnail}
