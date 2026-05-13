@@ -1,5 +1,6 @@
 import { Transform } from 'class-transformer';
 import { IsBoolean, IsIn, IsOptional, IsString, MaxLength } from 'class-validator';
+import { ApiPropertyOptional } from '@nestjs/swagger';
 import {
   SORT_ORDERS,
   VIDEO_SORT_FIELDS,
@@ -21,20 +22,39 @@ function toBool({ value }: { value: unknown }): boolean | undefined {
 }
 
 export class VideosQueryDto {
+  @ApiPropertyOptional({
+    description: 'Búsqueda case-insensitive en título y autor.',
+    example: 'react',
+    maxLength: 80,
+  })
   @IsOptional()
   @IsString()
   @MaxLength(80)
   @Transform(({ value }) => (typeof value === 'string' ? value.trim() : value))
   search?: string;
 
+  @ApiPropertyOptional({
+    description: 'Campo por el cual ordenar.',
+    enum: VIDEO_SORT_FIELDS as unknown as string[],
+    default: 'hype',
+  })
   @IsOptional()
   @IsIn(VIDEO_SORT_FIELDS as unknown as string[])
   sortBy?: VideoSortField;
 
+  @ApiPropertyOptional({
+    description: 'Dirección del orden.',
+    enum: SORT_ORDERS as unknown as string[],
+    default: 'desc',
+  })
   @IsOptional()
   @IsIn(SORT_ORDERS as unknown as string[])
   order?: SortOrder;
 
+  @ApiPropertyOptional({
+    description: 'Si es `true`, devuelve sólo videos detectados como tutoriales.',
+    example: false,
+  })
   @IsOptional()
   @IsBoolean()
   @Transform(toBool)

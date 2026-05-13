@@ -10,14 +10,14 @@ export function Header() {
           </span>
           <div className="flex flex-col gap-1 leading-tight">
             <span className="text-base font-semibold tracking-tight text-zinc-50">HypeTube</span>
-            <span className="text-[10px] font-medium uppercase tracking-[0.22em] text-zinc-500">
+            <span className="text-[11px] font-medium uppercase tracking-[0.16em] text-zinc-300/95">
               Cartelera de hype tecnológico
             </span>
           </div>
         </a>
         <nav className="hidden items-center gap-5 text-xs text-zinc-400 sm:flex">
           <a
-            href="https://github.com"
+            href="https://github.com/asdruprojects/hypetube"
             target="_blank"
             rel="noreferrer noopener"
             className="transition-colors hover:text-zinc-100"
