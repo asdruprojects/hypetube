@@ -17,19 +17,18 @@ export function CrownVideo({ video }: CrownVideoProps) {
   const commentsDisabled = video.comments === null;
 
   return (
-    <article className="relative isolate animate-fade-in-up">
-      {/* Halos detrás de la card (z-index >= 0 dentro de isolate) — en Safari, -z-10 + blend
-          sobre la imagen pueden dibujar rectángulos negros; evitamos ambos. */}
+    <article className="relative isolate">
+      {/* Sin filter:blur ni scale animado: en Chrome Android eso + scroll = GPU OOM / pantalla negra. */}
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-0 z-0 scale-[1.02] rounded-[2.25rem] bg-[radial-gradient(70%_65%_at_50%_45%,rgba(251,191,36,0.38),rgba(245,197,66,0.12)_45%,transparent_72%)] blur-[1.5px] sm:scale-105 sm:rounded-[3rem] md:scale-110"
+        className="pointer-events-none absolute inset-0 z-0 rounded-[2.25rem] bg-[radial-gradient(70%_65%_at_50%_45%,rgba(251,191,36,0.32),rgba(245,197,66,0.1)_45%,transparent_72%)] sm:rounded-[3rem]"
       />
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-0 z-0 rounded-[2rem] bg-[radial-gradient(60%_55%_at_50%_50%,rgba(255,224,140,0.18),transparent_70%)]"
+        className="pointer-events-none absolute inset-0 z-0 rounded-[2rem] bg-[radial-gradient(60%_55%_at_50%_50%,rgba(255,224,140,0.14),transparent_70%)]"
       />
 
-      <div className="relative z-[1] overflow-hidden rounded-3xl border border-amber-300/55 bg-gradient-to-br from-amber-50 via-white to-stone-100 shadow-[0_0_0_1px_rgba(251,191,36,0.1),0_0_52px_-10px_rgba(245,197,66,0.4),0_32px_64px_-24px_rgba(120,80,20,0.32)]">
+      <div className="relative z-[1] overflow-hidden rounded-3xl border border-amber-300/55 bg-gradient-to-br from-amber-50 via-white to-stone-100 shadow-lg shadow-amber-900/10 ring-1 ring-amber-200/30 sm:shadow-[0_0_0_1px_rgba(251,191,36,0.1),0_0_52px_-10px_rgba(245,197,66,0.4),0_32px_64px_-24px_rgba(120,80,20,0.32)]">
         <div className="grid grid-cols-1 md:grid-cols-[1.05fr_1fr]">
           {/* Imagen */}
           <div className="relative aspect-video overflow-hidden bg-stone-200 md:aspect-auto md:min-h-[360px]">
@@ -38,6 +37,8 @@ export function CrownVideo({ video }: CrownVideoProps) {
               alt={video.title}
               className="h-full w-full object-cover"
               fallbackClassName="from-stone-300 via-stone-200 to-amber-100 text-stone-700"
+              fetchPriority="high"
+              sizes="(max-width: 767px) 100vw, 55vw"
             />
             {/* Tinte sobre la imagen (sin mix-blend: en iOS Safari suele producir artefactos negros) */}
             <div

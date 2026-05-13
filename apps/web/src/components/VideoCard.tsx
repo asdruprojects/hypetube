@@ -5,17 +5,21 @@ import { formatCompact, formatHype } from '../lib/format';
 
 interface VideoCardProps {
   video: VideoDTO;
+  /** Menos decodificaciones simultáneas en móvil (evita crash de Chrome). */
+  fetchPriority?: 'high' | 'low' | 'auto';
 }
 
-export function VideoCard({ video }: VideoCardProps) {
+export function VideoCard({ video, fetchPriority = 'low' }: VideoCardProps) {
   const commentsDisabled = video.comments === null;
   return (
-    <Card className="group flex h-full flex-col overflow-hidden border-white/[0.06] transition-colors hover:border-white/15">
+    <Card className="group flex h-full flex-col overflow-hidden border-white/[0.06] transition-colors hover:border-white/15 [content-visibility:auto] [contain-intrinsic-size:auto_280px]">
       <div className="relative aspect-video overflow-hidden bg-zinc-900">
         <Thumbnail
           src={video.thumbnail}
           alt={video.title}
           className="h-full w-full object-cover"
+          fetchPriority={fetchPriority}
+          sizes="(max-width: 639px) 100vw, (max-width: 1023px) 50vw, 25vw"
         />
         <div className="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-zinc-950/80 to-transparent" />
         <div className="absolute left-2 top-2 flex flex-wrap gap-1.5">

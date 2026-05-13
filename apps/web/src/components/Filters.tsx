@@ -202,7 +202,7 @@ function SortMenu({ value, onChange }: SortMenuProps) {
             // en >=sm vuelve al anclaje original a la derecha con ancho fijo.
             'absolute left-0 top-full z-30 mt-2 w-64 min-w-[14rem] max-w-[calc(100vw-2rem)] origin-top-left overflow-hidden rounded-xl border border-white/10 bg-zinc-950 p-1.5 shadow-2xl shadow-black/60',
             'sm:left-auto sm:right-0 sm:max-w-none sm:origin-top-right',
-            'animate-fade-in-up outline-none ring-1 ring-white/5',
+            'outline-none ring-1 ring-white/5',
           )}
         >
           {SORT_OPTIONS.map((opt, idx) => {
