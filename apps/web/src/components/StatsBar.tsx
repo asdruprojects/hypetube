@@ -8,7 +8,7 @@ export function StatsBar() {
 
   if (isLoading) {
     return (
-      <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
+      <div className="grid grid-cols-2 gap-3 sm:grid-cols-4 [&>*]:min-w-0">
         {Array.from({ length: 4 }).map((_, i) => (
           <Skeleton key={i} className="h-24 w-full" />
         ))}
@@ -23,7 +23,7 @@ export function StatsBar() {
   }
 
   return (
-    <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
+    <div className="grid grid-cols-2 gap-3 sm:grid-cols-4 [&>*]:min-w-0">
       <Stat
         label="Videos"
         value={formatInteger(data.totalVideos)}
@@ -33,7 +33,7 @@ export function StatsBar() {
       <Stat
         label="Hype promedio"
         value={`${formatHype(data.averageHype)}%`}
-        hint="(likes + comments) / views"
+        hint="(likes + comentarios) / vistas"
         icon={<Flame className="h-4 w-4" />}
       />
       <Stat
