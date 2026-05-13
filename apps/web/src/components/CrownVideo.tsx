@@ -18,10 +18,10 @@ export function CrownVideo({ video }: CrownVideoProps) {
 
   return (
     <article className="relative animate-fade-in-up">
-      {/* Halo dorado externo — amplio pero contenido */}
+      {/* Halo dorado externo — recortado en mobile para que no genere overflow horizontal */}
       <div
         aria-hidden
-        className="pointer-events-none absolute -inset-12 -z-10 rounded-[3rem] bg-[radial-gradient(70%_65%_at_50%_45%,rgba(251,191,36,0.4),rgba(245,197,66,0.13)_45%,transparent_75%)] blur-[2px]"
+        className="pointer-events-none absolute -inset-4 -z-10 rounded-[2.25rem] bg-[radial-gradient(70%_65%_at_50%_45%,rgba(251,191,36,0.4),rgba(245,197,66,0.13)_45%,transparent_75%)] blur-[2px] sm:-inset-8 md:-inset-12 md:rounded-[3rem]"
       />
       {/* Brillo interior secundario (más sutil) */}
       <div
@@ -81,7 +81,7 @@ export function CrownVideo({ video }: CrownVideoProps) {
               ) : null}
             </div>
 
-            <dl className="grid grid-cols-3 gap-3 rounded-2xl border border-amber-200/80 bg-gradient-to-b from-amber-50/95 to-amber-100/40 p-4 shadow-[inset_0_1px_0_rgba(255,255,255,0.7)] ring-1 ring-amber-300/40">
+            <dl className="grid grid-cols-3 gap-2 rounded-2xl border border-amber-200/80 bg-gradient-to-b from-amber-50/95 to-amber-100/40 p-3 shadow-[inset_0_1px_0_rgba(255,255,255,0.7)] ring-1 ring-amber-300/40 sm:gap-3 sm:p-4">
               <CrownMetric
                 icon={<Eye className="h-4 w-4" />}
                 label="Vistas"
@@ -95,7 +95,9 @@ export function CrownVideo({ video }: CrownVideoProps) {
               <CrownMetric
                 icon={<MessageSquare className="h-4 w-4" />}
                 label="Comentarios"
-                value={commentsDisabled ? 'Desactivados' : formatCompact(video.comments)}
+                shortLabel="Coments"
+                value={commentsDisabled ? 'Off' : formatCompact(video.comments)}
+                fullValue={commentsDisabled ? 'Desactivados' : undefined}
               />
             </dl>
           </div>
@@ -108,19 +110,33 @@ export function CrownVideo({ video }: CrownVideoProps) {
 function CrownMetric({
   icon,
   label,
+  shortLabel,
   value,
+  fullValue,
 }: {
   icon: ReactNode;
   label: string;
+  shortLabel?: string;
   value: ReactNode;
+  fullValue?: string;
 }) {
   return (
-    <div className="flex flex-col gap-1.5 rounded-xl border border-amber-300/50 bg-white/70 px-3 py-2.5 shadow-sm ring-1 ring-inset ring-white/60">
-      <dt className="flex items-center gap-1.5 text-[10px] font-bold uppercase tracking-[0.18em] text-amber-800/80">
-        <span className="text-amber-600">{icon}</span>
-        {label}
+    <div className="flex min-w-0 flex-col gap-1.5 overflow-hidden rounded-xl border border-amber-300/50 bg-white/70 px-2.5 py-2 shadow-sm ring-1 ring-inset ring-white/60 sm:px-3 sm:py-2.5">
+      <dt className="flex min-w-0 items-center gap-1 text-[10px] font-bold uppercase tracking-[0.1em] text-amber-800/80 sm:gap-1.5 sm:tracking-[0.18em]">
+        <span className="shrink-0 text-amber-600">{icon}</span>
+        {/* En mobile mostramos una etiqueta corta para que el card no se rompa;
+         * la versión completa queda accesible para lectores de pantalla. */}
+        <span className="min-w-0 truncate">
+          <span className="sm:hidden">{shortLabel ?? label}</span>
+          <span className="hidden sm:inline">{label}</span>
+        </span>
       </dt>
-      <dd className="text-xl font-bold tabular-nums tracking-tight text-zinc-900">{value}</dd>
+      <dd
+        className="whitespace-nowrap text-base font-bold tabular-nums tracking-tight text-zinc-900 sm:text-xl"
+        title={fullValue}
+      >
+        {value}
+      </dd>
     </div>
   );
 }
