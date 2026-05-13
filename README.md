@@ -49,3 +49,7 @@ cp apps/web/.env.example apps/web/.env.local
 pnpm --filter @hypetube/api test:e2e   # backend (Jest + supertest)
 pnpm --filter @hypetube/web cy:run     # frontend (Cypress, requiere `pnpm dev` corriendo)
 ```
+
+## Demo (despliegue)
+
+Front en producción (Railway): [https://hypetubeweb-production.up.railway.app/](https://hypetubeweb-production.up.railway.app/)
