@@ -1,0 +1,14 @@
+{
+  "name": "@hypetube/typescript-config",
+  "version": "0.0.0",
+  "private": true,
+  "license": "MIT",
+  "scripts": {
+    "build": "echo 'skip'",
+    "lint": "echo 'skip'",
+    "check-types": "echo 'skip'"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
