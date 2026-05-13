@@ -7,11 +7,11 @@ const styles: Record<Variant, string> = {
   default: 'bg-emerald-500/10 text-emerald-300 ring-1 ring-inset ring-emerald-500/20',
   /** Contraste alto sobre miniaturas claras u oscuras (no solo sobre fondo oscuro de la app). */
   tutorial:
-    'bg-zinc-950/90 text-sky-100 ring-1 ring-inset ring-sky-400/70 shadow-md backdrop-blur-sm font-semibold',
+    'bg-zinc-950/95 text-sky-100 ring-1 ring-inset ring-sky-400/70 shadow-md font-semibold',
   crown:
     'bg-gradient-to-r from-amber-300/20 via-amber-200/10 to-amber-300/20 text-amber-200 ring-1 ring-inset ring-amber-300/40',
   muted:
-    'bg-zinc-950/90 text-zinc-100 ring-1 ring-inset ring-white/30 shadow-md backdrop-blur-sm font-semibold',
+    'bg-zinc-950/95 text-zinc-100 ring-1 ring-inset ring-white/30 shadow-md font-semibold',
   outline: 'text-zinc-300 ring-1 ring-inset ring-white/15',
 };
 

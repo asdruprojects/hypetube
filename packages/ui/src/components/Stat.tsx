@@ -15,7 +15,7 @@ export function Stat({ label, value, hint, icon, className }: StatProps) {
   return (
     <div
       className={cn(
-        'relative isolate flex min-h-0 min-w-0 flex-col gap-1.5 overflow-hidden rounded-2xl border border-amber-400/35 bg-gradient-to-b from-zinc-900/95 to-zinc-950 p-3 shadow-[0_0_0_1px_rgba(251,191,36,0.12),0_12px_36px_-14px_rgba(245,197,66,0.18)] ring-1 ring-inset ring-amber-400/15 backdrop-blur-sm sm:p-4',
+        'relative isolate flex min-h-0 min-w-0 flex-col gap-1.5 overflow-hidden rounded-2xl border border-amber-400/35 bg-gradient-to-b from-zinc-900/90 to-zinc-900/75 p-3 shadow-[0_0_0_1px_rgba(251,191,36,0.12),0_12px_36px_-14px_rgba(245,197,66,0.18)] ring-1 ring-inset ring-amber-400/15 sm:p-4',
         'before:pointer-events-none before:absolute before:inset-0 before:bg-[radial-gradient(120%_80%_at_50%_-20%,rgba(251,191,36,0.12),transparent_55%)]',
         className,
       )}

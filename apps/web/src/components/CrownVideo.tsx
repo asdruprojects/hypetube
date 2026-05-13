@@ -45,7 +45,7 @@ export function CrownVideo({ video }: CrownVideoProps) {
               className="absolute inset-0 bg-gradient-to-tr from-amber-900/12 via-transparent to-white/25"
             />
             <div className="absolute left-4 top-4">
-              <span className="inline-flex items-center gap-1.5 rounded-full border border-amber-300/60 bg-zinc-950/90 px-3 py-1.5 text-[11px] font-bold uppercase tracking-[0.16em] text-amber-200 shadow-[0_0_28px_-2px_rgba(251,191,36,0.7)] backdrop-blur-sm">
+              <span className="inline-flex items-center gap-1.5 rounded-full border border-amber-300/60 bg-zinc-950/95 px-3 py-1.5 text-[11px] font-bold uppercase tracking-[0.16em] text-amber-200 shadow-[0_0_28px_-2px_rgba(251,191,36,0.7)]">
                 <Crown className="h-3.5 w-3.5 text-amber-300" />
                 Joya de la Corona
               </span>

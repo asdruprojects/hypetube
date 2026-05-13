@@ -200,7 +200,7 @@ function SortMenu({ value, onChange }: SortMenuProps) {
           className={cn(
             // En mobile el dropdown se ancla a la izquierda del botón y se adapta al ancho disponible;
             // en >=sm vuelve al anclaje original a la derecha con ancho fijo.
-            'absolute left-0 top-full z-30 mt-2 w-64 min-w-[14rem] max-w-[calc(100vw-2rem)] origin-top-left overflow-hidden rounded-xl border border-white/10 bg-zinc-950/95 p-1.5 shadow-2xl shadow-black/60 backdrop-blur-md',
+            'absolute left-0 top-full z-30 mt-2 w-64 min-w-[14rem] max-w-[calc(100vw-2rem)] origin-top-left overflow-hidden rounded-xl border border-white/10 bg-zinc-950 p-1.5 shadow-2xl shadow-black/60',
             'sm:left-auto sm:right-0 sm:max-w-none sm:origin-top-right',
             'animate-fade-in-up outline-none ring-1 ring-white/5',
           )}
