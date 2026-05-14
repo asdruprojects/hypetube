@@ -18,10 +18,13 @@ export function CrownVideo({ video }: CrownVideoProps) {
 
   return (
     <article>
-      {/* Sin halos absolutos con z-index: crean contextos de apilamiento que disparan
-          capas GPU adicionales y artefactos grises en Chrome Android al hacer scroll. */}
-      <div className="overflow-hidden rounded-2xl border-2 border-amber-400 bg-amber-50">
-        <div className="grid grid-cols-1 md:grid-cols-[1.05fr_1fr]">
+      {/*
+        Marco “brillo”: gradiente fino como halo (no borde plano).
+        Sin filter:blur ni capas extra con z-index negativo — seguro en Chrome móvil.
+      */}
+      <div className="rounded-2xl bg-gradient-to-br from-amber-100 via-amber-400 to-amber-600 p-px shadow-[0_0_26px_-8px_rgba(245,197,66,0.38),0_0_1px_rgba(251,191,36,0.6)]">
+        <div className="overflow-hidden rounded-[15px] bg-amber-50">
+          <div className="grid grid-cols-1 md:grid-cols-[1.05fr_1fr]">
           {/* Imagen */}
           <div className="relative aspect-video overflow-hidden bg-stone-200 md:aspect-auto md:min-h-[360px]">
             <Thumbnail
@@ -69,7 +72,7 @@ export function CrownVideo({ video }: CrownVideoProps) {
               ) : null}
             </div>
 
-            <dl className="grid grid-cols-3 gap-2 rounded-xl border border-amber-300 bg-amber-100 p-3 sm:gap-3 sm:p-4">
+            <dl className="grid grid-cols-3 gap-2 rounded-xl border border-amber-300 bg-amber-50 p-3 sm:gap-3 sm:p-4">
               <CrownMetric
                 icon={<Eye className="h-4 w-4" />}
                 label="Vistas"
@@ -88,6 +91,7 @@ export function CrownVideo({ video }: CrownVideoProps) {
               />
             </dl>
           </div>
+        </div>
         </div>
       </div>
     </article>
