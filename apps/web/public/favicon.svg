@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img" aria-label="HypeTube">
+  <defs>
+    <linearGradient id="hypetube-grad" x1="4" y1="4" x2="28" y2="28" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fcd34d" />
+      <stop offset="0.5" stop-color="#fbbf24" />
+      <stop offset="1" stop-color="#fb7185" />
+    </linearGradient>
+  </defs>
+  <rect width="32" height="32" rx="8" fill="url(#hypetube-grad)" />
+  <!-- Rayo estilo Lucide Zap, centrado -->
+  <path
+    fill="#18181b"
+    d="M18.5 5 8 17h6.5L13 27l11-13h-6.5L18.5 5Z"
+  />
+</svg>
