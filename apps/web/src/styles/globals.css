@@ -3,36 +3,23 @@
 @tailwind utilities;
 
 @layer base {
-  /* El color base vive en <html>: cubre overscroll de iOS, primer paint antes de React
-   * y cualquier hueco que deje la barra dinámica de Chrome Android.
-   * El body NO debe tener background-color o tapa el gradiente del ::before. */
+  /* El fondo vive SOLO en <html> — sin pseudo-elementos fijos ni capas GPU extra.
+   * position:fixed en ::before crea una capa compositor separada que en Chrome Android
+   * produce rayas / artefactos grises al hacer scroll cerca de elementos complejos. */
   html {
     color-scheme: dark;
     background-color: #09090b;
+    background-image:
+      radial-gradient(900px 560px at 12% -10%, rgba(99, 102, 241, 0.16), transparent 62%),
+      radial-gradient(820px 520px at 100% 100%, rgba(244, 114, 182, 0.10), transparent 65%);
+    background-attachment: scroll;
+    background-repeat: no-repeat;
   }
 
   body {
     position: relative;
-    /* 100dvh = viewport dinámico (considera barra de URL del navegador móvil que se contrae/expande). */
     min-height: 100dvh;
-    /* clip (no hidden) corta el desborde horizontal del halo del CrownVideo
-     * sin convertir al body en scroll container -> preserva el sticky del Header. */
     overflow-x: clip;
-  }
-
-  /* Gradiente decorativo fijo. Va detrás del contenido pero ENCIMA del color base de html.
-   * Mantenido simple (2 radiales) para no sobrecargar la GPU en mobile y evitar
-   * que Chrome Android invalide la capa y muestre flashes negros. */
-  body::before {
-    content: '';
-    position: fixed;
-    inset: 0;
-    z-index: -1;
-    pointer-events: none;
-    background:
-      radial-gradient(900px 560px at 12% -10%, rgba(99, 102, 241, 0.16), transparent 62%),
-      radial-gradient(820px 520px at 100% 100%, rgba(244, 114, 182, 0.10), transparent 65%),
-      #0b0b0f;
   }
 
   * {

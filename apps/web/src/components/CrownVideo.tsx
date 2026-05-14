@@ -17,18 +17,10 @@ export function CrownVideo({ video }: CrownVideoProps) {
   const commentsDisabled = video.comments === null;
 
   return (
-    <article className="relative">
-      {/* Sin filter:blur ni scale animado: en Chrome Android eso + scroll = GPU OOM / pantalla negra. */}
-      <div
-        aria-hidden
-        className="pointer-events-none absolute inset-0 z-0 rounded-[2.25rem] bg-[radial-gradient(70%_65%_at_50%_45%,rgba(251,191,36,0.32),rgba(245,197,66,0.1)_45%,transparent_72%)] sm:rounded-[3rem]"
-      />
-      <div
-        aria-hidden
-        className="pointer-events-none absolute inset-0 z-0 rounded-[2rem] bg-[radial-gradient(60%_55%_at_50%_50%,rgba(255,224,140,0.14),transparent_70%)]"
-      />
-
-      <div className="relative z-[1] overflow-hidden rounded-3xl border border-amber-300/55 bg-gradient-to-br from-amber-50 via-white to-stone-100 shadow-lg shadow-amber-900/10 ring-1 ring-amber-200/30 sm:shadow-[0_0_0_1px_rgba(251,191,36,0.1),0_0_52px_-10px_rgba(245,197,66,0.4),0_32px_64px_-24px_rgba(120,80,20,0.32)]">
+    <article>
+      {/* Sin halos absolutos con z-index: crean contextos de apilamiento que disparan
+          capas GPU adicionales y artefactos grises en Chrome Android al hacer scroll. */}
+      <div className="overflow-hidden rounded-3xl border border-amber-300/55 bg-gradient-to-br from-amber-50 via-white to-stone-100 shadow-[0_2px_24px_-4px_rgba(251,191,36,0.25),0_1px_3px_rgba(0,0,0,0.1)] ring-1 ring-amber-200/30">
         <div className="grid grid-cols-1 md:grid-cols-[1.05fr_1fr]">
           {/* Imagen */}
           <div className="relative aspect-video overflow-hidden bg-stone-200 md:aspect-auto md:min-h-[360px]">
@@ -106,6 +98,7 @@ export function CrownVideo({ video }: CrownVideoProps) {
     </article>
   );
 }
+
 
 function CrownMetric({
   icon,
