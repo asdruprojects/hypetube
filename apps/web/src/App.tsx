@@ -42,7 +42,7 @@ export function App() {
     <div className="min-h-screen">
       <Header />
 
-      <main className="container space-y-10 py-8 md:py-12">
+      <main className="container space-y-10 py-8 md:py-12" style={{ contain: 'paint' }}>
         <section aria-labelledby="overview-heading" className="space-y-6">
           <div className="space-y-2">
             <h1
@@ -69,7 +69,7 @@ export function App() {
 
           {isLoading ? (
             <>
-              <div className="h-[260px] animate-pulse rounded-3xl border border-white/5 bg-zinc-950/40 sm:h-[320px]" />
+              <div className="h-[260px] rounded-2xl border border-zinc-800 bg-zinc-900 sm:h-[320px]" />
               <VideoGridSkeleton />
             </>
           ) : isError ? (

@@ -60,10 +60,10 @@ export function Filters({ value, onChange }: FiltersProps) {
           type="button"
           onClick={() => onChange({ ...value, tutorialsOnly: !value.tutorialsOnly })}
           className={cn(
-            'inline-flex h-10 items-center gap-2 rounded-xl border px-3.5 text-sm font-medium transition-all duration-150',
+            'inline-flex h-10 items-center gap-2 rounded-xl border px-3.5 text-sm font-medium',
             value.tutorialsOnly
-              ? 'border-sky-400/40 bg-sky-400/10 text-sky-200 shadow-[0_0_0_1px_rgba(56,189,248,0.15)]'
-              : 'border-white/15 bg-zinc-900/70 text-zinc-300 hover:border-white/25 hover:bg-zinc-900/85 hover:text-zinc-100',
+              ? 'border-sky-500 bg-sky-950 text-sky-200'
+              : 'border-zinc-700 bg-zinc-900 text-zinc-300 hover:bg-zinc-800 hover:text-zinc-100',
           )}
           aria-pressed={value.tutorialsOnly}
         >
@@ -168,11 +168,10 @@ function SortMenu({ value, onChange }: SortMenuProps) {
         aria-expanded={open}
         aria-controls={listboxId}
         className={cn(
-          'group inline-flex h-10 items-center gap-2 rounded-xl border bg-zinc-900/70 pl-3 pr-2.5 text-sm font-medium text-zinc-200 transition-all duration-150',
-          'shadow-[inset_0_1px_0_rgba(255,255,255,0.04)]',
+          'group inline-flex h-10 items-center gap-2 rounded-xl border bg-zinc-900 pl-3 pr-2.5 text-sm font-medium text-zinc-200',
           open
-            ? 'border-amber-300/50 bg-zinc-900/90 ring-2 ring-amber-300/20'
-            : 'border-white/15 hover:border-white/25 hover:bg-zinc-900/85',
+            ? 'border-amber-400 bg-zinc-800'
+            : 'border-zinc-700 hover:bg-zinc-800',
         )}
       >
         <ArrowUpDown className="h-3.5 w-3.5 text-zinc-400 transition-colors group-hover:text-zinc-200" />

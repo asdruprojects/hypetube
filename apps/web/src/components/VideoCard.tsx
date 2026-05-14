@@ -12,7 +12,7 @@ interface VideoCardProps {
 export function VideoCard({ video, fetchPriority = 'low' }: VideoCardProps) {
   const commentsDisabled = video.comments === null;
   return (
-    <Card className="group flex h-full flex-col overflow-hidden border-white/[0.06] transition-colors hover:border-white/15">
+    <Card className="flex h-full flex-col overflow-hidden">
       <div className="relative aspect-video overflow-hidden bg-zinc-900">
         <Thumbnail
           src={video.thumbnail}
@@ -21,7 +21,6 @@ export function VideoCard({ video, fetchPriority = 'low' }: VideoCardProps) {
           fetchPriority={fetchPriority}
           sizes="(max-width: 639px) 100vw, (max-width: 1023px) 50vw, 25vw"
         />
-        <div className="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-zinc-950/80 to-transparent" />
         <div className="absolute left-2 top-2 flex flex-wrap gap-1.5">
           {video.isTutorial ? (
             <Badge variant="tutorial">
@@ -34,7 +33,7 @@ export function VideoCard({ video, fetchPriority = 'low' }: VideoCardProps) {
             </Badge>
           ) : null}
         </div>
-        <div className="absolute bottom-2 right-2 flex items-center gap-1 rounded-full bg-zinc-950/80 px-2 py-0.5 text-[11px] font-semibold text-amber-200 ring-1 ring-inset ring-amber-300/30">
+        <div className="absolute bottom-2 right-2 flex items-center gap-1 rounded-full border border-amber-500 bg-zinc-950 px-2 py-0.5 text-[11px] font-semibold text-amber-200">
           <Flame className="h-3 w-3" />
           {formatHype(video.hypeScore)}
         </div>

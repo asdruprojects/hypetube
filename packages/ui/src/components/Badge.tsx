@@ -4,15 +4,11 @@ import { cn } from '../lib/cn';
 type Variant = 'default' | 'tutorial' | 'crown' | 'muted' | 'outline';
 
 const styles: Record<Variant, string> = {
-  default: 'bg-emerald-500/10 text-emerald-300 ring-1 ring-inset ring-emerald-500/20',
-  /** Contraste alto sobre miniaturas claras u oscuras (no solo sobre fondo oscuro de la app). */
-  tutorial:
-    'bg-zinc-950/95 text-sky-100 ring-1 ring-inset ring-sky-400/70 shadow-md font-semibold',
-  crown:
-    'bg-gradient-to-r from-amber-300/20 via-amber-200/10 to-amber-300/20 text-amber-200 ring-1 ring-inset ring-amber-300/40',
-  muted:
-    'bg-zinc-950/95 text-zinc-100 ring-1 ring-inset ring-white/30 shadow-md font-semibold',
-  outline: 'text-zinc-300 ring-1 ring-inset ring-white/15',
+  default: 'bg-emerald-950 text-emerald-300 border border-emerald-700',
+  tutorial: 'bg-zinc-950 text-sky-100 border border-sky-500 font-semibold',
+  crown: 'bg-amber-950 text-amber-200 border border-amber-500',
+  muted: 'bg-zinc-950 text-zinc-100 border border-zinc-600 font-semibold',
+  outline: 'text-zinc-300 border border-zinc-700',
 };
 
 export interface BadgeProps extends HTMLAttributes<HTMLSpanElement> {

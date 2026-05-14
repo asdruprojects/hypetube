@@ -20,7 +20,7 @@ export function CrownVideo({ video }: CrownVideoProps) {
     <article>
       {/* Sin halos absolutos con z-index: crean contextos de apilamiento que disparan
           capas GPU adicionales y artefactos grises en Chrome Android al hacer scroll. */}
-      <div className="overflow-hidden rounded-2xl border border-amber-300/55 bg-amber-50">
+      <div className="overflow-hidden rounded-2xl border-2 border-amber-400 bg-amber-50">
         <div className="grid grid-cols-1 md:grid-cols-[1.05fr_1fr]">
           {/* Imagen */}
           <div className="relative aspect-video overflow-hidden bg-stone-200 md:aspect-auto md:min-h-[360px]">
@@ -32,13 +32,8 @@ export function CrownVideo({ video }: CrownVideoProps) {
               fetchPriority="high"
               sizes="(max-width: 767px) 100vw, 55vw"
             />
-            {/* Tinte sobre la imagen (sin mix-blend: en iOS Safari suele producir artefactos negros) */}
-            <div
-              aria-hidden
-              className="absolute inset-0 bg-gradient-to-tr from-amber-900/12 via-transparent to-white/25"
-            />
             <div className="absolute left-4 top-4">
-              <span className="inline-flex items-center gap-1.5 rounded-full border border-amber-300/60 bg-zinc-950/95 px-3 py-1.5 text-[11px] font-bold uppercase tracking-[0.16em] text-amber-200 shadow-[0_0_28px_-2px_rgba(251,191,36,0.7)]">
+              <span className="inline-flex items-center gap-1.5 rounded-full border border-amber-400 bg-zinc-950 px-3 py-1.5 text-[11px] font-bold uppercase tracking-[0.16em] text-amber-200">
                 <Crown className="h-3.5 w-3.5 text-amber-300" />
                 Joya de la Corona
               </span>
@@ -62,19 +57,19 @@ export function CrownVideo({ video }: CrownVideoProps) {
             </div>
 
             <div className="flex flex-wrap items-center gap-2">
-              <span className="inline-flex items-center gap-2 rounded-full bg-amber-100/80 px-3 py-1.5 text-sm font-semibold text-amber-900 ring-1 ring-inset ring-amber-300/60">
+              <span className="inline-flex items-center gap-2 rounded-full border border-amber-400 bg-amber-100 px-3 py-1.5 text-sm font-semibold text-amber-900">
                 <Flame className="h-4 w-4" />
                 {formatHype(video.hypeScore)}% hype
               </span>
               {video.isTutorial ? (
-                <span className="inline-flex items-center gap-1.5 rounded-full bg-sky-100 px-3 py-1.5 text-xs font-medium text-sky-800 ring-1 ring-inset ring-sky-300/60">
+                <span className="inline-flex items-center gap-1.5 rounded-full border border-sky-400 bg-sky-100 px-3 py-1.5 text-xs font-medium text-sky-800">
                   <GraduationCap className="h-3.5 w-3.5" />
                   Tutorial · ×2
                 </span>
               ) : null}
             </div>
 
-            <dl className="grid grid-cols-3 gap-2 rounded-2xl border border-amber-200/80 bg-gradient-to-b from-amber-50/95 to-amber-100/40 p-3 shadow-[inset_0_1px_0_rgba(255,255,255,0.7)] ring-1 ring-amber-300/40 sm:gap-3 sm:p-4">
+            <dl className="grid grid-cols-3 gap-2 rounded-xl border border-amber-300 bg-amber-100 p-3 sm:gap-3 sm:p-4">
               <CrownMetric
                 icon={<Eye className="h-4 w-4" />}
                 label="Vistas"
@@ -112,8 +107,8 @@ function CrownMetric({
   fullValue?: string;
 }) {
   return (
-    <div className="flex min-w-0 flex-col gap-1.5 overflow-hidden rounded-xl border border-amber-300/50 bg-white/70 px-2.5 py-2 shadow-sm ring-1 ring-inset ring-white/60 sm:px-3 sm:py-2.5">
-      <dt className="flex min-w-0 items-center gap-1 text-[10px] font-bold uppercase tracking-[0.08em] text-amber-800/80 sm:gap-1.5 sm:tracking-[0.14em]">
+    <div className="flex min-w-0 flex-col gap-1.5 overflow-hidden rounded-lg border border-amber-300 bg-white px-2.5 py-2 sm:px-3 sm:py-2.5">
+      <dt className="flex min-w-0 items-center gap-1 text-[10px] font-bold uppercase tracking-[0.08em] text-amber-800 sm:gap-1.5 sm:tracking-[0.14em]">
         <span className="shrink-0 text-amber-600">{icon}</span>
         <span className="min-w-0 truncate" title={label}>
           {label}
