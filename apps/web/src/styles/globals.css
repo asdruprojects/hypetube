@@ -3,23 +3,18 @@
 @tailwind utilities;
 
 @layer base {
-  /* El fondo vive SOLO en <html> — sin pseudo-elementos fijos ni capas GPU extra.
-   * position:fixed en ::before crea una capa compositor separada que en Chrome Android
-   * produce rayas / artefactos grises al hacer scroll cerca de elementos complejos. */
+  /* Fondo color sólido — sin gradientes que creen capas compositor adicionales.
+   * En Chrome Android, cualquier capa GPU extra (gradients fijos, sticky con sombras,
+   * backdrop-filter) hace que el navegador NO limpie el frame buffer al hacer scroll,
+   * y el contenido anterior queda "fantasmeado" duplicado sobre el actual. */
   html {
     color-scheme: dark;
-    background-color: #09090b;
-    background-image:
-      radial-gradient(900px 560px at 12% -10%, rgba(99, 102, 241, 0.16), transparent 62%),
-      radial-gradient(820px 520px at 100% 100%, rgba(244, 114, 182, 0.10), transparent 65%);
-    background-attachment: scroll;
-    background-repeat: no-repeat;
+    background-color: #0a0a0c;
   }
 
   body {
-    position: relative;
     min-height: 100dvh;
-    overflow-x: clip;
+    background-color: #0a0a0c;
   }
 
   * {

@@ -2,10 +2,10 @@ import { Zap } from 'lucide-react';
 
 export function Header() {
   return (
-    <header className="sticky top-0 z-30 border-b border-white/10 bg-zinc-900/95 shadow-[0_8px_24px_-12px_rgba(0,0,0,0.6)]">
+    <header className="relative z-30 border-b border-white/10 bg-zinc-900 shadow-[0_8px_24px_-12px_rgba(0,0,0,0.6)]">
       <div className="container flex items-center justify-between py-4">
         <a href="/" className="group flex items-center gap-3" aria-label="HypeTube — inicio">
-          <span className="relative inline-flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-amber-300 via-amber-400 to-rose-400 text-zinc-950 shadow-[0_10px_30px_-12px_rgba(245,197,66,0.55)] ring-1 ring-amber-200/40 transition-transform group-hover:scale-[1.04]">
+          <span className="relative inline-flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-amber-300 via-amber-400 to-rose-400 text-zinc-950 shadow-md ring-1 ring-amber-200/40">
             <Zap className="h-4 w-4" strokeWidth={2.5} />
           </span>
           <div className="flex flex-col gap-1 leading-tight">

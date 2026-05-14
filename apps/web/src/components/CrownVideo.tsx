@@ -20,7 +20,7 @@ export function CrownVideo({ video }: CrownVideoProps) {
     <article>
       {/* Sin halos absolutos con z-index: crean contextos de apilamiento que disparan
           capas GPU adicionales y artefactos grises en Chrome Android al hacer scroll. */}
-      <div className="overflow-hidden rounded-3xl border border-amber-300/55 bg-gradient-to-br from-amber-50 via-white to-stone-100 shadow-[0_2px_24px_-4px_rgba(251,191,36,0.25),0_1px_3px_rgba(0,0,0,0.1)] ring-1 ring-amber-200/30">
+      <div className="overflow-hidden rounded-2xl border border-amber-300/55 bg-amber-50">
         <div className="grid grid-cols-1 md:grid-cols-[1.05fr_1fr]">
           {/* Imagen */}
           <div className="relative aspect-video overflow-hidden bg-stone-200 md:aspect-auto md:min-h-[360px]">
